@@ -4,7 +4,7 @@ import { Days, Habit, Periods } from '../types/Habit';
 import { useCategory } from '../store/Category';
 import Period from './Period.vue';
 import AddCustomMessages from './AddCustomMessages.vue';
-import { CPriorities } from '../const/CPriorities';
+import { CPriority } from '../const/CPriority';
 import { CTypes } from '../const/CTypes';
 
 
@@ -52,7 +52,7 @@ const setCustomMessages = ((event: {
 			placeholder="Habit Name">
 		<input type="text" placeholder="Description" class="border-solid border-2 border-sky-500 p-2 m-4 " v-model="newHabit.description">
 		<select placeholder="Priority" v-model="newHabit.priority" class="border-solid border-2 border-sky-500 p-2 m-4 ">
-			<option v-for="priority in CPriorities" :key="priority.label" :value="priority.value">{{ priority.label }}</option>
+			<option v-for="priority in CPriority" :key="priority.label" :value="priority.value">{{ priority.label }}</option>
 		</select>
 		<select placeholder="Priority" v-model="newHabit.priority" class="border-solid border-2 border-sky-500 p-2 m-4 ">
 			<option v-for="habitType in CTypes" :key="habitType.label" :value="habitType.value">{{ habitType.label }}</option>

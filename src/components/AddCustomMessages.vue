@@ -5,15 +5,38 @@ const randomMessage = ref(false)
 const successMessage = ref('');
 const failureMessage = ref('');
 
-watch(randomMessage, (value) => {
-	console.log(value)
+watch(randomMessage, () => {
+	emit('setCustomMessages',
+	{
+		random_message: randomMessage.value,
+		success_message: successMessage.value,
+		failure_message : failureMessage.value
+	})	
+});
+
+watch(successMessage, () => {
+	emit('setCustomMessages',
+	{
+		random_message: randomMessage.value,
+		success_message: successMessage.value,
+		failure_message : failureMessage.value
+	})	
+});
+
+watch(failureMessage, () => {
+	emit('setCustomMessages',
+	{
+		random_message: randomMessage.value,
+		success_message: successMessage.value,
+		failure_message : failureMessage.value
+	})	
 });
 
 const emit = defineEmits<{
 	(e: 'setCustomMessages', value: {
 		random_message: boolean,
-		successMessage: string,
-		failureMessage : string
+		success_message: string,
+		failure_message : string
 	}): void
 }>()
 

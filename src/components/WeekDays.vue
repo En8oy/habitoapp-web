@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, PropType } from 'vue';
-import { Days } from '../types/Habit';
+import { Days, DaysWeek } from '../types/Habit';
 
 const props = defineProps({
 	block: {
@@ -13,7 +13,7 @@ const props = defineProps({
 	}
 });
 
-const days = ref<Days[]>([
+const days = ref<DaysWeek[]>([
 	'SUNDAY',
 	'MONDAY',
 	'TUESDAY',
