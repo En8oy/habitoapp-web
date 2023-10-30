@@ -1,6 +1,9 @@
 <script lang="ts" setup>
-import { ref, PropType } from 'vue';
-import { Days, DaysWeek } from '../types/Habit';
+import { PropType } from 'vue';
+import { Days } from '../types/Habit';
+import { useHabitConst } from '../composables/useHabitConst';
+
+const { cDays } = useHabitConst()
 
 const props = defineProps({
 	block: {
@@ -13,15 +16,15 @@ const props = defineProps({
 	}
 });
 
-const days = ref<DaysWeek[]>([
-	'SUNDAY',
-	'MONDAY',
-	'TUESDAY',
-	'WEDNESDAY',
-	'THURSDAY',
-	'FRIDAY',
-	'SATURDAY',
-])
+// const days = ref<DaysWeek[]>([
+// 	'SUNDAY',
+// 	'MONDAY',
+// 	'TUESDAY',
+// 	'WEDNESDAY',
+// 	'THURSDAY',
+// 	'FRIDAY',
+// 	'SATURDAY',
+// ])
 
 const addOrRemoveDays = ((day: Days) => {
 	if (props.block) return
@@ -50,7 +53,7 @@ const emit = defineEmits<{
 
 <template>
 	<div class="flex justify-between items-center">
-		<button v-if="!props.block" :class="isSelected(day) ? 'bg-blue-500' : 'bg-slate-500'" @click.prevent="addOrRemoveDays(day)" class=" px-3 rounded text-white" v-for="day in days">{{day}}</button>
-		<div v-if="props.block" :class="isSelected(day) ? 'bg-blue-500' : 'bg-slate-500'" class=" px-3 rounded text-white" v-for="day in days">{{day}}</div>
+		<button v-if="!props.block" :class="isSelected(day.value) ? 'bg-gray-600 text-white' : 'bg-white text-slate-600 border-2'" @click.prevent="addOrRemoveDays(day.value)" class="px-3 rounded  w-full mx-2 h-10" v-for="day in cDays">{{day.label}}</button>
+		<button disabled v-if="props.block" :class="isSelected(day.value) ? 'bg-gray-600 text-white' : 'bg-white text-slate-600 border-2'" class="px-3 rounded w-full mx-2 h-10" v-for="day in cDays">{{day.label}}</button>
 	</div>
 </template>

@@ -1,0 +1,30 @@
+{
+	"periods" : {
+		"weekday" : "Dias de entre semana",
+		"weekend" : "Fines de semana",
+		"personalized_weekday" : "Dias de entre semana personalizados",
+		"fortnight" : "Quincena",
+		"last_day_of_the_month" : "Ultimo dia del mes",
+		"first_day_of_the_month" : "Primer dia del mes",
+		"specific_days_of_month" : "Dias especificos del mes",
+		"specific_day" : "Dia especifico"
+	},
+	"days" : {
+		"monday" : "Lunes",
+		"tuesday" : "Martes",
+		"wednesday" : "Miercoles",
+		"thursday" : "Jueves",
+		"friday" : "Viernes",
+		"saturday" : "Sabado",
+		"sunday" : "Domingo"
+	},
+	"priorities" : {
+		"high" : "Alto",
+		"low" : "Bajo",
+		"medium" : "Medio"
+	},
+	"types" : {
+		"positive" : "Positivo",
+		"negative" : "Negativo"
+	}
+}
