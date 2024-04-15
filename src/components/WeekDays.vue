@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { PropType } from 'vue';
-import { Days } from '../types/Habit';
+import { Days } from '../types/models/Habit';
 import { useHabitConst } from '../composables/useHabitConst';
 
 const { cDays } = useHabitConst()

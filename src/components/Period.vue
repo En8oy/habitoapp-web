@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, computed, watch } from 'vue';
-import { Days, Periods } from '../types/Habit';
+import { Days, Periods } from '../types/models/Habit';
 import WeekDays from './WeekDays.vue';
 import AddMonthDay from './AddMonthDay.vue';
 import { useHabitConst } from '../composables/useHabitConst';

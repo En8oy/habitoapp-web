@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { PropType, computed } from 'vue';
-import { Days } from '../types/Habit';
+import { Days } from '../types/models/Habit';
 
 const props = defineProps({
 	block: {

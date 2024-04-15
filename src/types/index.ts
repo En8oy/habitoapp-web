@@ -1,1 +1,1 @@
-export * from "./RouteType"
+export * from "./app/RouteType"

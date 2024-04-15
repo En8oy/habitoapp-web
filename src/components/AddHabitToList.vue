@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed, ref, watch } from 'vue'
-import { Days, Habit, Periods } from '../types/Habit';
+import { Days, Habit, Periods } from '../types/models/Habit';
 import { useCategory } from '../store/Category';
 import Period from './Period.vue';
 import AddCustomMessages from './AddCustomMessages.vue';

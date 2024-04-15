@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import Header from "./components/header.vue"
-// import AddHabitToList from "./components/AddHabitToList.vue"
-</script>
 
+import { computed } from 'vue';
+import { usePreference } from './store/Preference';
+const preference = usePreference()
+
+const themeSelected = computed(()=>{
+  return preference.theme
+})
+
+</script>
 <template>
-  <Header></Header>
-	<!-- <AddHabitToList></AddHabitToList> -->
-  <router-view></router-view>
+  <div :data-theme="themeSelected">
+    <router-view></router-view>
+  </div>
 </template>

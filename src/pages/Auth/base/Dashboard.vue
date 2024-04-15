@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 import { getCurrentInstance, ref } from "vue";
-import AddHabitToList from "../../components/AddHabitToList.vue"
+import AddHabitToList from "../../../components/AddHabitToList.vue";
 
 const showModal = ref<boolean>(false)
 

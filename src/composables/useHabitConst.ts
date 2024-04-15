@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { DaysWeek, HabitType, Periods, Priority } from "../types/Habit";
+import { DaysWeek, HabitType, Periods, Priority } from "../types/models/Habit";
 import { useI18n } from 'vue-i18n'
 
 export function useHabitConst() {
