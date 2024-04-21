@@ -6,7 +6,9 @@ import Public from "../pages/Public/Public.vue";
 import Auth from "../pages/Auth/Auth.vue";
 import Dashboard from "../pages/Auth/base/Dashboard.vue";
 
+
 let auth = (to: any, from: any, next: any) => {
+  console.log(to, from)
   let auth: boolean = true;
   if (auth) {
     next();
@@ -14,7 +16,7 @@ let auth = (to: any, from: any, next: any) => {
   next({ name: "PublicHome" });
 };
 
-const routes:Array<RouteRecordRaw> = [
+const publicRoutes:Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "PublicIndex",
@@ -25,16 +27,21 @@ const routes:Array<RouteRecordRaw> = [
       { path: "about", name: "PublicAbout", component: About },
     ]
   },
+]
+
+const authRoutes:Array<RouteRecordRaw> = [
   {
     path: "/auth",
     component: Auth,
-    redirect: "/dashboard",
+    redirect: "auth/my-dashboard",
     beforeEnter: (to: any, from: any, next: any) => auth(to, from, next),
     children: [
-      { path: "dashboard", component: Dashboard, name: "PublicDashboard" },
+      { path: "my-dashboard", component: Dashboard, name: "PublicDashboard" },
     ],
   },
 ];
+
+const routes:Array<RouteRecordRaw> = [...publicRoutes, ...authRoutes] 
 
 const history = createWebHistory();
 

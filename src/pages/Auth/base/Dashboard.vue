@@ -5,19 +5,6 @@ import AddHabitToList from "../../../components/AddHabitToList.vue";
 
 const showModal = ref<boolean>(false)
 
-const internalInstance = getCurrentInstance();
-//  [App.vue specific] When App.vue is first loaded start the progress bar
-internalInstance?.appContext.config.globalProperties.$Progress.start();
-console.error("START PROGRESS BAR")
-setTimeout(() => {
-	internalInstance?.appContext.config.globalProperties.$Progress.pause();
-	console.error("FINISH PROGRESS BAR")
-}, 1000);
-
-const moveTheProgress = (event:number) => {
-	console.log("event move", event)
-}
-
 </script>
 <template>
 	<section class="bg-white border-b py-8">
@@ -59,7 +46,7 @@ const moveTheProgress = (event:number) => {
 				<div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-[900px]">
 						<vue-progress-bar></vue-progress-bar>
 					<div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-						<AddHabitToList @closeModal="showModal = $event" @currentStepChange="moveTheProgress($event)"></AddHabitToList>
+						<AddHabitToList @closeModal="showModal = $event"></AddHabitToList>
 					</div>
 					<!-- <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
 						<button type="button"

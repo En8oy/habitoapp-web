@@ -3,7 +3,7 @@
 		<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
 		<div class="drawer-content flex flex-col items-center">
 			<!-- Navbar -->
-			<div class="w-full navbar bg-base-300 fixed px-10">
+			<div class="w-full navbar bg-base-300 px-10">
 				<div class="flex-none lg:hidden">
 					<label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -14,14 +14,13 @@
 					</label>
 				</div>
 				<div class="flex-1 px-2 mx-2">
-					<RouterLink to="/" class="btn btn-ghost text-xl">SuavitApp</RouterLink>
+					<RouterLink to="/" class="btn btn-ghost text-xl">GATCHA</RouterLink>
 				</div>
 				<div class="flex-none hidden lg:block">
 					<ul class="menu menu-horizontal">
 						<!-- Navbar menu content here -->
 						<li v-for="route in publicRoutes" :key="route.name">
-							<RouterLink class="btn btn-ghost" :to="route.to">{{ route.name
-								}}</RouterLink>
+							<RouterLink class="btn btn-ghost" :to="route.to">{{ route.name}}</RouterLink>
 						</li>
 						<div class="dropdown dropdown-end mx-2">
 							<div tabindex="0" role="button" class="btn btn-primary btn-circle">
@@ -33,7 +32,7 @@
 								</div>
 							</div>
 							<div tabindex="0"
-								class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-200 shadow">
+								class="mt-3 z-[1000] card card-compact dropdown-content w-52 bg-base-200 shadow">
 								<div class="card-body h-[200px] overflow-y-scroll">
 									<a class="btn btn-ghost" @click="changeTheme(th)" v-for="th in themes">{{ th }}</a>
 								</div>
@@ -42,13 +41,14 @@
 					</ul>
 				</div>
 			</div>
-			<div class="py-12">
+			<div class="">
 				<router-view v-slot="{ Component }">
 					<transition name="slide-fade">
 						<component :is="Component" />
 					</transition>
 				</router-view>
 			</div>
+			<Footer></Footer>
 		</div>
 		<div class="drawer-side">
 			<label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
@@ -81,6 +81,7 @@ import { ref } from 'vue'
 import { RouteItem } from '../../types/app/RouteType';
 import { usePreference } from '../../store/Preference';
 import { Theme } from '../../types/ui/Theme';
+import Footer from '../../components/Footer.vue';
 
 const publicRoutes = ref<RouteItem[]>([
 	{
@@ -93,7 +94,7 @@ const publicRoutes = ref<RouteItem[]>([
 	},
 	{
 		name: 'Dashboard',
-		to: '/auth/dashboard'
+		to: '/auth'
 	}
 ])
 

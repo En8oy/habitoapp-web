@@ -40,7 +40,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { RouteItem } from '../../../types/app/RouteType';
+import { RouteItem } from '../../types/app/RouteType';
 
 const publicRoutes = ref<RouteItem[]>([
 	{
