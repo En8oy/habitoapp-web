@@ -34,7 +34,7 @@ const authRoutes:Array<RouteRecordRaw> = [
     path: "/auth",
     component: Auth,
     redirect: "auth/my-dashboard",
-    beforeEnter: (to: any, from: any, next: any) => auth(to, from, next),
+    // beforeEnter: (to: any, from: any, next: any) => auth(to, from, next),
     children: [
       { path: "my-dashboard", component: Dashboard, name: "PublicDashboard" },
     ],

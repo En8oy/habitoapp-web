@@ -1,5 +1,23 @@
-<script lang="ts">
+<script lang="ts" setup>
 import Footer from '../../components/Footer.vue';
+import { computed, onMounted, reactive, ref } from 'vue';
+import { RouteItem } from '../../types/app/RouteType';
+
+const publicRoutes = ref<RouteItem[]>([
+	{
+		name: 'My Dashboard',
+		to: '/auth/my-dashboard'
+	},
+	// {
+	// 	name: 'About',
+	// 	to: '/about'
+	// },
+	// {
+	// 	name: 'Dashboard',
+	// 	to: '/auth'
+	// }
+])
+
 
 </script>
 <template>
@@ -8,8 +26,8 @@ import Footer from '../../components/Footer.vue';
 		<div class="drawer-content">
 
 			<!-- Page content here -->
-			<div class="w-full navbar bg-base-300 fixed px-10">
-				<div class="flex-none lg:hidden">
+			<div class="w-full navbar bg-base-300 px-10">
+				<!-- <div class="flex-none lg:hidden">
 					<label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
 							class="inline-block w-6 h-6 stroke-current">
@@ -17,8 +35,9 @@ import Footer from '../../components/Footer.vue';
 								d="M4 6h16M4 12h16M4 18h16"></path>
 						</svg>
 					</label>
-				</div>
+				</div> -->
 				<div class="flex-1 px-2 mx-2">
+
 					<label for="my-drawer" class="btn btn-circle swap swap-rotate">
 
 						<!-- this hidden checkbox controls the state -->
@@ -43,10 +62,9 @@ import Footer from '../../components/Footer.vue';
 				<div class="flex-none hidden lg:block">
 					<ul class="menu menu-horizontal">
 						<!-- Navbar menu content here -->
-						<!-- <li v-for="route in publicRoutes" :key="route.name">
-							<RouterLink class="btn btn-ghost" :to="route.to">{{ route.name
-								}}</RouterLink>
-						</li> -->
+						<li>
+							<a class="btn btn-ghost">User</a>
+						</li>
 						<!-- <div class="dropdown dropdown-end mx-2">
 							<div tabindex="0" role="button" class="btn btn-primary btn-circle">
 								<div class="indicator">
@@ -66,7 +84,7 @@ import Footer from '../../components/Footer.vue';
 					</ul>
 				</div>
 			</div>
-			<div class="py-12">
+			<div class="">
 				<router-view v-slot="{ Component }">
 					<transition name="slide-fade">
 						<component :is="Component" />
@@ -78,10 +96,9 @@ import Footer from '../../components/Footer.vue';
 		</div>
 		<div class="drawer-side">
 			<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-			<ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+			<ul class="menu p-4 w-80 min-h-full bg-base-200">
 				<!-- Sidebar content here -->
-				<li><a>Sidebar Item 1</a></li>
-				<li><a>Sidebar Item 2</a></li>
+				<li v-for="route in publicRoutes" :key="route.name"><RouterLink :to="route.to">{{ route.name }}</RouterLink></li>
 
 			</ul>
 		</div>
