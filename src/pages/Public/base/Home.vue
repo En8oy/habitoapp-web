@@ -129,6 +129,6 @@
 </template>
 
 
-<script>
+<script lang="ts" setup>
 // “Tus hábitos son cambiantes, y esta aplicación también. Es una app gratuita que se enfoca en construir hábitos y mejorar la productividad. A través de mensajes variados, te motiva y te conecta con una comunidad inspiradora. Puede ayudarte a alcanzar tus metas para llevar una vida saludable, ser más productivo y encontrar la felicidad.
 </script>

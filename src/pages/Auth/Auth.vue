@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import Footer from '../../components/Footer.vue';
-import { computed, onMounted, reactive, ref } from 'vue';
+import { ref } from 'vue';
 import { RouteItem } from '../../types/app/RouteType';
 
 const publicRoutes = ref<RouteItem[]>([

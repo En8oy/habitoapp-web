@@ -1,9 +1,9 @@
 <template>
 	<div class="drawer">
 		<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-		<div class="drawer-content flex flex-col items-center">
+		<div class="drawer-content flex flex-col items-center min-h-10">
 			<!-- Navbar -->
-			<div class="w-full navbar bg-base-300 px-10">
+			<div class="w-full navbar bg-base-300 px-10 h-auto lg:h-auto sm:h-32">
 				<div class="flex-none lg:hidden">
 					<label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

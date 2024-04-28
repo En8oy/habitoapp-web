@@ -7,14 +7,14 @@ import Auth from "../pages/Auth/Auth.vue";
 import Dashboard from "../pages/Auth/base/Dashboard.vue";
 
 
-let auth = (to: any, from: any, next: any) => {
-  console.log(to, from)
-  let auth: boolean = true;
-  if (auth) {
-    next();
-  }
-  next({ name: "PublicHome" });
-};
+// let auth = (to: any, from: any, next: any) => {
+//   console.log(to, from)
+//   let auth: boolean = true;
+//   if (auth) {
+//     next();
+//   }
+//   next({ name: "PublicHome" });
+// };
 
 const publicRoutes:Array<RouteRecordRaw> = [
   {

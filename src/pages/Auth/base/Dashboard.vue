@@ -1,73 +1,69 @@
 <script lang="ts" setup>
 
-import { getCurrentInstance, ref } from "vue";
-import AddHabitToList from "../../../components/AddHabitToList.vue";
-
-const showModal = ref<boolean>(false)
+// import { ref } from "vue";
 
 </script>
 <template>
-	<div
-		class="h-[50vh] sm:h-[50vhvh] md:h-[50vhvh] lg:h-[50vh] xl:h-[50vh] flex lg:flex-row sm:flex-col-reverse mx-auto items-center justify-between container mt-10">
-		<div class="w-1/3 md:w-full h-full mx-2 bg-base-100 py-5">
-			<h1 class="text-[clamp(1rem,3vw,2rem)] font-black leading-[1.1] xl:text-start">Bienvenido: Irbing Moreno
+	<!-- <div class="flex">
+		<div>
+			<h1 class="text-[clamp(1rem,3vw,1.5rem)] font-black leading-[1.1] xl:text-start mb-5">Bienvenido: Irbing Moreno
 			</h1>
+		</div>
+		<div>
+			A
+		</div>
+	</div> -->
+	<!-- <h1 class="text-[clamp(1rem,3vw,1.5rem)] font-black leading-[1.1] xl:text-start mb-5">Bienvenido: Irbing Moreno
+	</h1> -->
+	<div
+		class="h-[40vh] lg:h-[40vh] xl:h-[40vh] flex lg:flex-row md:flex-col md:h-auto mx-auto gap-4 container my-10 w-full justify-start items-start">
+		<div class="h-full max-h-[300px] w-[60%] lg:w-[60%] sm:w-full  bg-base-100 flex-col pa-2">
 			<!-- <p class="leading-normal text-2xl my-8">¿Que Vamos a hacer hoy?</p> -->
-			<div class="card w-full h-[30vh] bg-base-300 shadow-xl">
+			<div class="card bg-base-300 shadow-xl h-full pa-10">
 				<!-- <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
 				</figure> -->
 				<div class="card-body">
 					<h2 class="card-title">Rutina Activada</h2>
 					<p>Nomber de la rutina</p>
-					<div class="card-actions justify-end">
-						<button class="btn btn-ghost text-primary outline">Cambiar</button>
-					</div>
+					
 				</div>
 			</div>
 		</div>
-		<div class="w-2/3 md:w-full h-full container flex mx-2">
+		<div class="w-[100%] md:w-full h-full container flex lg:flex-row sm:flex-col lg:gap-x-3 sm:gap-x-5">
 			<div class="card w-full h-full bg-base-300 shadow-xl">
 				<figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
 				</figure>
 				<div class="card-body">
 					<h2 class="card-title">Rutina Activada</h2>
 					<p>Nomber de la rutina</p>
-					<div class="card-actions justify-end">
-						<button class="btn btn-ghost text-primary outline">Cambiar</button>
-					</div>
+					
 				</div>
 			</div>
-			<div class="card w-full h-full bg-base-300 shadow-xl mx-2">
+			<div class="card w-full h-full bg-base-300 shadow-xl">
 				<figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
 				</figure>
 				<div class="card-body">
 					<h2 class="card-title">Rutina Activada</h2>
 					<p>Nomber de la rutina</p>
-					<div class="card-actions justify-end">
-						<button class="btn btn-ghost text-primary outline">Cambiar</button>
-					</div>
+					
 				</div>
 			</div>
-			<div class="card w-full h-full bg-base-300 shadow-xl mx-2">
+			<div class="card w-full h-full bg-base-300 shadow-xl">
 				<figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
 				</figure>
 				<div class="card-body">
 					<h2 class="card-title">Rutina Activada</h2>
 					<p>Nomber de la rutina</p>
-					<div class="card-actions justify-end">
-						<button class="btn btn-ghost text-primary outline">Cambiar</button>
-					</div>
+					
 				</div>
 			</div>
 		</div>
-
 	</div>
-	<div class="flex flex-row w-full lg:flex-row sm:flex-col h-[50vh] justify-between items-center">
+	<div class="h-[50vh] lg:h-[50vh] xl:h-[50vh] flex lg:flex-row md:flex-col-reverse md:h-auto mx-auto container my-10 w-full justify-center items-start">
 		<div class="bg-red-500 w-1/3 md:w-full h-full">
 			<p>Que Vamos a hacer hoy</p>
 		</div>
 		<div class="bg-blue-500 w-1/3 md:w-full h-full">a</div>
-		<div class="bg-pink-500 w-1/3 md:w-full h-full">as</div>
 	</div>
 
 	<!-- <div v-if="showModal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
